@@ -1,239 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Novare</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novare Team Homepage</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <style>
-    /* Global Styles */
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif; 
-      background: linear-gradient(to bottom, #ffffff, #f5f5f5);
-    }
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif; 
+            background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+        }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #730000, #a10000);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+        /* About Novare Section */
+        .about-section {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto 25px; 
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
 
-    /* About Novare Section */
-    .about-section {
-      background: white;
-      width: 90%;
-      max-width: 900px;
-      margin: 35px auto 25px;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
-      text-align: center;
-      animation: fadeIn 0.8s ease-in-out;
-    }
+        .about-section h2 {
+            color: #730000;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
 
-    .about-section h2 {
-      color: #730000;
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 15px;
-    }
+        .about-section p {
+            color: #444;
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 750px;
+            margin: 0 auto;
+        }
 
-    .about-section p {
-      color: #444;
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 750px;
-      margin: 0 auto;
-    }
+        /* Divider Line (RED LINE CSS) */
+        .section-divider {
+            width: 80%;
+            height: 3px;
+            background-color: #730000;
+            margin: 25px auto;
+            border-radius: 2px;
+        }
 
-    /* Divider Line */
-    .section-divider {
-      width: 80%;
-      height: 3px;
-      background-color: #730000;
-      margin: 25px auto;
-      border-radius: 2px;
-    }
+        /* Title Styles */
+        .section-title-container {
+            text-align: center;
+            margin: 40px 0 30px; 
+        }
 
-    /* Title Styles */
-    .section-title-container {
-        text-align: center;
-        margin: 40px 0 30px; 
-    }
+        .section-title {
+            font-size: 38px;
+            font-weight: 900;
+            color: #730000;
+            margin: 0; 
+            margin-bottom: 5px;
+        }
 
-    .section-title {
-      font-size: 38px;
-      font-weight: 900;
-      color: #730000;
-      margin: 0; 
-      margin-bottom: 5px;
-    }
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: 400; 
+            color: #555; 
+            max-width: 600px;
+            margin: 0 auto 25px auto; 
+        }
+        
+        /* Member Cards */
+        .member-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 0 auto 60px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
 
-    .section-subtitle {
-        font-size: 18px;
-        font-weight: 400; 
-        color: #555; 
-        max-width: 600px;
-        margin: 0 auto 25px auto; 
-    }
-    
-    /* Member Cards */
-    .member-row {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin: 0 auto 60px;
-      flex-wrap: wrap;
-      padding: 0 20px;
-    }
+        .card {
+            background: white;
+            width: 240px;
+            padding: 35px;
+            border-radius: 15px;
+            /* Elevated look */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.1); 
+            border-top: 8px solid #730000;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+            flex-shrink: 0;
+            transform: translateY(0); 
+        }
 
-    .card {
-      background: white;
-      width: 240px;
-      padding: 35px;
-      border-radius: 15px;
-      /* Elevated look */
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.1); 
-      border-top: 8px solid #730000;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
-      flex-shrink: 0;
-      transform: translateY(0); 
-    }
+        .card:hover {
+            /* Lift up (Angat) and Shadow-only effect */
+            transform: translateY(-8px); 
+            border-top-color: #a10000; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.35), 0 8px 15px rgba(0,0,0,0.2); 
+        }
 
-    .card:hover {
-      /* Lift up (Angat) and Shadow-only effect */
-      transform: translateY(-8px); 
-      border-top-color: #a10000; 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.35), 0 8px 15px rgba(0,0,0,0.2); 
-    }
+        /* --- NEW: Style for the anchor link inside the card --- */
+        .card a {
+            text-decoration: none; /* Removes underline */
+            color: inherit; /* Inherits the color from .name div */
+            display: block; /* Makes the entire card content area clickable if needed */
+            height: 100%;
+        }
+        /* ----------------------------------------------------- */
 
-    /* --- NEW: Style for the anchor link inside the card --- */
-    .card a {
-        text-decoration: none; /* Removes underline */
-        color: inherit; /* Inherits the color from .name div */
-        display: block; /* Makes the entire card content area clickable if needed */
-        height: 100%;
-    }
-    /* ----------------------------------------------------- */
+        .name {
+            font-size: 24px;
+            font-weight: 900;
+            color: #730000;
+            letter-spacing: 1px;
+        }
 
-    .name {
-      font-size: 24px;
-      font-weight: 900;
-      color: #730000;
-      letter-spacing: 1px;
-    }
+        /* Footer */
+        footer {
+            background-color: #730000;
+            color: white;
+            text-align: center;
+            padding: 18px 10px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-top: auto;
+        }
 
-    /* Footer */
-    footer {
-      background-color: #730000;
-      color: white;
-      text-align: center;
-      padding: 18px 10px;
-      font-size: 16px;
-      letter-spacing: 1px;
-      margin-top: auto;
-    }
+        /* Animations and Responsive styles (omitted for brevity, but same as before) */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    /* Animations and Responsive styles (omitted for brevity, but same as before) */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        font-size: 34px;
-      }
-      .card {
-        width: 180px;
-        padding: 25px;
-      }
-      .name {
-        font-size: 20px;
-      }
-      .member-row {
-        gap: 20px;
-      }
-    }
-  </style>
+        @media (max-width: 600px) {
+            .card {
+                width: 180px;
+                padding: 25px;
+            }
+            .name {
+                font-size: 20px;
+            }
+            .member-row {
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-  <header>WELCOME TO NOVARE</header>
-
-  <div class="about-section">
-    <h2>What is NOVARE?</h2>
-    <p>
-      NOVARE is a collaborative team committed to designing and developing systems that bring positive impact to people. 
-      Our mission is to create meaningful, innovative, and user-centered solutions through teamwork, creativity, 
-      and a shared passion for technology.
-    </p>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <div class="section-title-container">
-    <div class="section-title">Meet the Team</div>
-    <div class="section-subtitle">Dedicated IT students behind every successful project.</div>
-  </div>
-
-  <div class="member-row">
-    <div class="card">
-        <a href="#caculitan-profile">
-            <div class="name">CACULITAN</div>
-        </a>
+    <div class="about-section">
+        <h2>What is NOVARE?</h2>
+        <p>
+            NOVARE is a collaborative team committed to designing and developing systems that bring positive impact to people. 
+            Our mission is to create meaningful, innovative, and user-centered solutions through teamwork, creativity, 
+            and a shared passion for technology.
+        </p>
     </div>
-    
-    <div class="card">
-        <a href="#capilitan-profile">
-            <div class="name">CAPILITAN</div>
-        </a>
+
+    <div class="section-divider"></div>
+
+    <div class="section-title-container">
+        <div class="section-title">Meet the Team</div>
+        <div class="section-subtitle">Dedicated IT students behind every successful project.</div>
     </div>
-    
-    <div class="card">
-        <a href="#gulles-profile">
-            <div class="name">GULLES</div>
-        </a>
+
+    <div class="member-row">
+        <div class="card">
+            <a href="#caculitan-profile">
+                <div class="name">CACULITAN</div>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="#capilitan-profile">
+                <div class="name">CAPILITAN</div>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="#gulles-profile">
+                <div class="name">GULLES</div>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="#villarta-profile">
+                <div class="name">VILLARTA</div>
+            </a>
+        </div>
     </div>
-    
-    <div class="card">
-        <a href="#villarta-profile">
-            <div class="name">VILLARTA</div>
-        </a>
-    </div>
-  </div>
 
-  <footer>
-    © 2025 NOVARE TEAM — All Rights Reserved
-  </footer>
+    <footer>
+        © 2025 NOVARE TEAM — All Rights Reserved
+    </footer>
 
-  <script>
-
-  </script>
-
+    <script>
+        // Any script logic for the content frame goes here
+    </script>
 </body>
 </html>
