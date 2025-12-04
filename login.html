@@ -78,7 +78,6 @@
   </div>
 
   <script>
-    // Elements
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
@@ -87,11 +86,9 @@
     const emailError = document.getElementById('emailError');
     const passwordError = document.getElementById('passwordError');
 
-    // Credentials for demo
     const DEMO_USERNAME = 'omlingo';
     const DEMO_PASSWORD = 'pupt';
 
-    // Toggle password visibility
     passwordToggle.addEventListener('click', () => {
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
@@ -104,7 +101,6 @@
       }
     });
 
-    // Validate username
     function validateUsername() {
       const value = emailInput.value.trim();
       if (!value) {
@@ -117,7 +113,6 @@
       return true;
     }
 
-    // Password validation (min 4 chars)
     function validatePassword() {
       const password = passwordInput.value.trim();
       if (password.length < 4) {
@@ -128,7 +123,6 @@
       return true;
     }
 
-    // Clear error when typing
     emailInput.addEventListener('input', () => {
       if (emailError.classList.contains('show')) emailError.classList.remove('show');
     });
@@ -136,11 +130,9 @@
       if (passwordError.classList.contains('show')) passwordError.classList.remove('show');
     });
 
-    // validate on blur
     emailInput.addEventListener('blur', validateUsername);
     passwordInput.addEventListener('blur', validatePassword);
 
-    // Form submit
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -151,15 +143,12 @@
         return;
       }
 
-      // Use trimmed, case-insensitive check for username
       const enteredUser = emailInput.value.trim();
       const enteredPass = passwordInput.value.trim();
 
-      // Show loading state
       loginBtn.textContent = 'Logging in...';
       loginBtn.disabled = true;
 
-      // Simulate server response
       setTimeout(() => {
         loginBtn.textContent = 'Log in';
         loginBtn.disabled = false;
@@ -168,8 +157,7 @@
         const passMatches = (enteredPass === DEMO_PASSWORD);
 
         if (userMatches && passMatches) {
-          // Redirect to index.html on successful login
-          window.location.href = 'index.html';
+          window.location.href = 'frameset.html';
         } else {
           alert('Incorrect username or password.');
         }
