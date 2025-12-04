@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Althea Gulles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif; 
+            background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Profile Container */
+        .profile-container {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto 25px; 
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            gap: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f5f5f5;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #730000;
+        }
+
+        .profile-basic-info h1 {
+            font-size: 34px;
+            color: #730000;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .course-year { 
+            color: #666; 
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .profile-contact { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
+
+        .contact-item { 
+            display: flex; 
+            gap: 8px; 
+            align-items: center; 
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Profile Sections */
+        .profile-sections {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .profile-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            border-top: 4px solid #730000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .profile-section h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #730000;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .list-items { 
+            margin-left: 20px; 
+        }
+
+        .list-items li { 
+            margin-bottom: 8px; 
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            grid-column: span 2;
+            background: #fff5f5;
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 4px solid #730000;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .quote-text { 
+            font-size: 20px; 
+            color: #730000; 
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #730000;
+            color: white;
+            text-align: center;
+            padding: 18px 10px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-top: auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote-section {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="gulles_pic.jpg" class="profile-img" alt="Althea Gulles">
+            <div class="profile-basic-info">
+                <h1>Althea Shane Salazar Gulles</h1>
+                <p class="course-year">BS Information Technology, 3rd Year</p>
+                <div class="profile-contact">
+                    <div class="contact-item"><i class="fas fa-phone"></i> 0956 526 7262</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i>  gullesalthe00@gmail.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-sections">
+            <div class="profile-section">
+                <h3><i class="fas fa-user"></i> Personal Information</h3>
+                <ul class="list-items">
+                    <li>Birthday: October 20, 2004</li>
+                    <li>Sex: Female</li>
+                    <li>Age: 21</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-graduation-cap"></i> Educational Attainment</h3>
+                <ul class="list-items">
+                    <li>High School: Arellano University – Jose Abad Santos Campus (2023)</li>
+                    <li>College: Polytechnic University of the Philippines – Taguig Campus (Expected 2027) </li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <ul class="list-items">
+                    <li>Filipino</li>
+                    <li>English</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-heart"></i> Hobbies</h3>
+                <ul class="list-items">
+                    <li>Reading books</li>
+                    <li>Volunteering</li>
+                    <li>Traveling</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-tools"></i> Skills</h3>
+                <ul class="list-items">
+                    <li>Photography</li>
+                    <li>Public Speaking</li>
+                    <li>Time Management</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-lightbulb"></i> Facts About Me</h3>
+                <ul class="list-items">
+                    <li>I am a night-oriented learner who is most productive during late hours. </li>
+                    <li>I enjoy engaging with young people through collaborative, community-focused activities. </li>
+                    <li>I value independence and often travel alone to broaden my perspective.</li>
+                </ul>
+            </div>
+
+            <div class="quote-section">
+                <h3><i class="fas fa-quote-left"></i> Favorite Quote</h3>
+                <div class="quote-text">"Be a risk taker."</div>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-star"></i> Dreams</h3>
+                <ul class="list-items">
+                    <li>To complete my degree in Information Technology. </li>
+                    <li>To support and uplift my family and other individuals in need.</li>
+                    <li>To experience living and working abroad.</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-plane"></i> Places I Want to Visit</h3>
+                <ul class="list-items">
+                    <li>London</li>
+                    <li>Switzerland</li>
+                    <li>Rome</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-thumbs-up"></i> Strengths</h3>
+                <ul class="list-items">
+                    <li>Creative</li>
+                    <li>Hardworking</li>
+                    <li>Empathetic</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-exclamation-circle"></i> Weaknesses</h3>
+                <ul class="list-items">
+                    <li>Difficulty functioning in large crowds</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-list-check"></i> Bucket List</h3>
+                <ul class="list-items">
+                    <li>To volunteer and contribute to programs supporting indigenous and rural communities</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-utensils"></i> Favorite Food</h3>
+                <ul class="list-items">
+                    <li>24 Chicken</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 NOVARE TEAM — All Rights Reserved
+    </footer>
+</body>
+</html>

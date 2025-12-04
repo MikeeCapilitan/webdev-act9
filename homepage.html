@@ -50,83 +50,47 @@
             margin: 0 auto;
         }
 
-        /* Divider Line (RED LINE CSS) */
-        .section-divider {
-            width: 80%;
-            height: 3px;
-            background-color: #730000;
-            margin: 25px auto;
-            border-radius: 2px;
-        }
-
-        /* Title Styles */
-        .section-title-container {
-            text-align: center;
-            margin: 40px 0 30px; 
-        }
-
-        .section-title {
-            font-size: 38px;
-            font-weight: 900;
-            color: #730000;
-            margin: 0; 
-            margin-bottom: 5px;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            font-weight: 400; 
-            color: #555; 
-            max-width: 600px;
-            margin: 0 auto 25px auto; 
-        }
-        
-        /* Member Cards */
-        .member-row {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin: 0 auto 60px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-
-        .card {
+        /* Mission Vision Section */
+        .mission-vision-section {
             background: white;
-            width: 240px;
-            padding: 35px;
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+            display: flex;
+            gap: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .mission-box, .vision-box {
+            flex: 1;
+            padding: 20px;
             border-radius: 15px;
-            /* Elevated look */
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.1); 
-            border-top: 8px solid #730000;
+            background: #f9f9f9;
             text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
-            flex-shrink: 0;
-            transform: translateY(0); 
         }
 
-        .card:hover {
-            /* Lift up (Angat) and Shadow-only effect */
-            transform: translateY(-8px); 
-            border-top-color: #a10000; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.35), 0 8px 15px rgba(0,0,0,0.2); 
+        .mission-box {
+            border-top: 4px solid #730000;
         }
 
-        /* --- NEW: Style for the anchor link inside the card --- */
-        .card a {
-            text-decoration: none; /* Removes underline */
-            color: inherit; /* Inherits the color from .name div */
-            display: block; /* Makes the entire card content area clickable if needed */
-            height: 100%;
+        .vision-box {
+            border-top: 4px solid #a10000;
         }
-        /* ----------------------------------------------------- */
 
-        .name {
-            font-size: 24px;
-            font-weight: 900;
+        .mission-box h3, .vision-box h3 {
             color: #730000;
-            letter-spacing: 1px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .mission-box p, .vision-box p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         /* Footer */
@@ -140,26 +104,16 @@
             margin-top: auto;
         }
 
-        /* Animations and Responsive styles (omitted for brevity, but same as before) */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            .card {
-                width: 180px;
-                padding: 25px;
-            }
-            .name {
-                font-size: 20px;
-            }
-            .member-row {
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mission-vision-section {
+                flex-direction: column;
                 gap: 20px;
             }
         }
@@ -176,45 +130,28 @@
         </p>
     </div>
 
-    <div class="section-divider"></div>
-
-    <div class="section-title-container">
-        <div class="section-title">Meet the Team</div>
-        <div class="section-subtitle">Dedicated IT students behind every successful project.</div>
-    </div>
-
-    <div class="member-row">
-        <div class="card">
-            <a href="caculitan.html">
-                <div class="name">CACULITAN</div>
-            </a>
+    <div class="mission-vision-section">
+        <div class="mission-box">
+            <h3>Our Mission</h3>
+            <p>
+                To deliver high-quality, innovative technology solutions that address real-world challenges. 
+                We strive to exceed expectations through continuous learning, collaboration, and dedication 
+                to excellence in every project we undertake.
+            </p>
         </div>
         
-        <div class="card">
-            <a href="#capilitan-profile">
-                <div class="name">CAPILITAN</div>
-            </a>
-        </div>
-        
-        <div class="card">
-            <a href="#gulles-profile">
-                <div class="name">GULLES</div>
-            </a>
-        </div>
-        
-        <div class="card">
-            <a href="#villarta-profile">
-                <div class="name">VILLARTA</div>
-            </a>
+        <div class="vision-box">
+            <h3>Our Vision</h3>
+            <p>
+                To become a recognized team of skilled developers who create transformative digital experiences. 
+                We aim to bridge the gap between technology and human needs, making a lasting positive impact 
+                on communities and industries.
+            </p>
         </div>
     </div>
 
     <footer>
         © 2025 NOVARE TEAM — All Rights Reserved
     </footer>
-
-    <script>
-        // Any script logic for the content frame goes here
-    </script>
 </body>
 </html>

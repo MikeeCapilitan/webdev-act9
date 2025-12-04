@@ -3,107 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOVARE | John Cris Caculitan</title>
+    <title>John Cris Caculitan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-        :root {
-            --primary: #730000;
-            --primary-dark: #5a0000;
-            --secondary: #6c757d;
-            --accent: #ffffff;
-            --light: #ffffff;
-            --gray-light: #f2f2f2;
-            --dark: #1f1f1f;
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif; 
+            background: linear-gradient(to bottom, #ffffff, #f5f5f5);
         }
 
         body {
-            background-color: var(--gray-light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--accent);
-            padding: 18px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .logo h1 { font-size: 28px; font-weight: 900; }
-        .logo-icon { font-size: 30px; }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            color: var(--accent);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: 0.25s;
-        }
-
-        nav a:hover { background: rgba(255,255,255,0.15); }
 
         /* Profile Container */
-        .student-profile-container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 28px;
-            background: var(--light);
-            border-radius: 15px;
-            box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+        .profile-container {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto 25px; 
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+            animation: fadeIn 0.8s ease-in-out;
         }
 
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--primary);
-            color: var(--accent);
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-bottom: 25px;
-            transition: 0.25s;
-        }
-
-        .back-button:hover { background-color: var(--primary-dark); }
-
-        /* Header Section */
-        .student-profile-header {
+        /* Profile Header */
+        .profile-header {
             display: flex;
-            gap: 26px;
-            padding-bottom: 26px;
-            border-bottom: 2px solid var(--gray-light);
+            gap: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f5f5f5;
+            margin-bottom: 25px;
         }
 
         .profile-img {
@@ -111,225 +48,257 @@
             height: 180px;
             object-fit: cover;
             border-radius: 50%;
-            border: 6px solid var(--primary);
+            border: 6px solid #730000;
         }
 
         .profile-basic-info h1 {
             font-size: 34px;
-            color: var(--primary);
+            color: #730000;
+            font-weight: 900;
             margin-bottom: 8px;
         }
 
-        .course-year { color: var(--secondary); margin-bottom: 12px; }
+        .course-year { 
+            color: #666; 
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
 
-        .profile-contact { display: flex; gap: 16px; flex-wrap: wrap; }
-        .contact-item { display: flex; gap: 8px; align-items: center; color: var(--secondary); }
+        .profile-contact { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
 
-        /* Sections */
+        .contact-item { 
+            display: flex; 
+            gap: 8px; 
+            align-items: center; 
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Profile Sections */
         .profile-sections {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 26px;
-            margin-top: 30px;
+            gap: 25px;
         }
 
         .profile-section {
-            background: #fff;
+            background: #f9f9f9;
             padding: 20px;
-            border-radius: 10px;
-            border-left: 6px solid var(--primary);
+            border-radius: 15px;
+            border-top: 4px solid #730000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
 
         .profile-section h3 {
             font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--primary-dark);
+            margin-bottom: 15px;
+            color: #730000;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .list-items { margin-left: 18px; }
-        .list-items li { margin-bottom: 8px; color: var(--secondary); }
+        .list-items { 
+            margin-left: 20px; 
+        }
 
-        /* Quote */
+        .list-items li { 
+            margin-bottom: 8px; 
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Quote Section */
         .quote-section {
             grid-column: span 2;
-            background: #fff5f6;
-            border-left: 6px solid var(--primary);
-            padding: 26px;
+            background: #fff5f5;
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 4px solid #730000;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .quote-text { 
+            font-size: 20px; 
+            color: #730000; 
+            margin-top: 15px;
             font-style: italic;
-            text-align: center;
+            font-weight: 500;
         }
 
-        .quote-text { font-size: 20px; color: var(--primary-dark); margin-top: 10px; }
-
+        /* Footer */
         footer {
-            background-color: var(--primary-dark);
+            background-color: #730000;
             color: white;
-            padding: 30px;
-            margin-top: 40px;
             text-align: center;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            padding: 18px 10px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-top: auto;
         }
 
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote-section {
+                grid-column: span 1;
+            }
+        }
     </style>
 </head>
+
 <body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="jc_pic.jpg" class="profile-img" alt="John Cris Caculitan">
+            <div class="profile-basic-info">
+                <h1>John Cris Caculitan</h1>
+                <p class="course-year">BS Information Technology, 3rd Year</p>
+                <div class="profile-contact">
+                    <div class="contact-item"><i class="fas fa-phone"></i> 0946 855 4212</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> johncriscaculitan01@gmail.com</div>
+                </div>
+            </div>
+        </div>
 
-<header>
-    <div class="container header-container">
-        <a href="homepage.html" class="logo">
-            <i class="fas fa-users logo-icon"></i>
-            <h1>NOVARE TEAM</h1>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="homepage.html">Home</a></li>
-                
-            </ul>
-        </nav>
-    </div>
-</header>
+        <div class="profile-sections">
+            <div class="profile-section">
+                <h3><i class="fas fa-user"></i> Personal Information</h3>
+                <ul class="list-items">
+                    <li>Birthday: September 01, 2004</li>
+                    <li>Sex: Male</li>
+                    <li>Age: 21</li>
+                </ul>
+            </div>
 
-<div class="student-profile-container">
+            <div class="profile-section">
+                <h3><i class="fas fa-graduation-cap"></i> Educational Attainment</h3>
+                <ul class="list-items">
+                    <li>High School: Saint Francis of Assisi College (2011–2023)</li>
+                    <li>College: Polytechnic University of the Philippines – Taguig Campus (Expected 2027)</li>
+                </ul>
+            </div>
 
-    
+            <div class="profile-section">
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <ul class="list-items">
+                    <li>Filipino</li>
+                    <li>English</li>
+                    <li>Basic Japanese</li>
+                    <li>Basic Ilocano</li>
+                </ul>
+            </div>
 
-    <div class="student-profile-header">
-        <img src="jc pic.jpg" class="profile-img" alt="John Cris Caculitan">
+            <div class="profile-section">
+                <h3><i class="fas fa-heart"></i> Hobbies</h3>
+                <ul class="list-items">
+                    <li>Drinking coffee</li>
+                    <li>Playing guitar</li>
+                    <li>Watching inspirational series</li>
+                </ul>
+            </div>
 
-        <div class="profile-basic-info">
-            <h1>John Cris Caculitan</h1>
-            <p class="course-year">BSIT, 3rd Year</p>
+            <div class="profile-section">
+                <h3><i class="fas fa-tools"></i> Skills</h3>
+                <ul class="list-items">
+                    <li>Making coffee</li>
+                    <li>Communication</li>
+                    <li>Community service</li>
+                    <li>Problem analyzer and solver</li>
+                </ul>
+            </div>
 
-            <div class="profile-contact">
-                <div class="contact-item"><i class="fas fa-phone"></i> 09468554212</div>
-                <div class="contact-item"><i class="fas fa-envelope"></i> johncriscaculitan01@gmail.com</div>
+            <div class="profile-section">
+                <h3><i class="fas fa-lightbulb"></i> Facts About Me</h3>
+                <ul class="list-items">
+                    <li>I'm a loyal friend</li>
+                    <li>I love making coffee</li>
+                    <li>I enjoy meeting new people</li>
+                </ul>
+            </div>
+
+            <div class="quote-section">
+                <h3><i class="fas fa-quote-left"></i> Favorite Quote</h3>
+                <div class="quote-text">"Happiness is not about getting all you want, It is about enjoying all you have."</div>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-star"></i> Dreams</h3>
+                <ul class="list-items">
+                    <li>Graduate with honors</li>
+                    <li>Build my own startup</li>
+                    <li>Have a high salary job</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-plane"></i> Places I Want to Visit</h3>
+                <ul class="list-items">
+                    <li>Japan (Cherry Blossoms, Anime Culture)</li>
+                    <li>Korea (Jeju Island)</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-thumbs-up"></i> Strengths</h3>
+                <ul class="list-items">
+                    <li>Creative</li>
+                    <li>Hardworking</li>
+                    <li>Empathetic</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-exclamation-circle"></i> Weaknesses</h3>
+                <ul class="list-items">
+                    <li>Overthinks</li>
+                    <li>Shy in big crowds</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-list-check"></i> Bucket List</h3>
+                <ul class="list-items">
+                    <li>Skydive</li>
+                    <li>Play guitar in public</li>
+                    <li>Visit 3 countries</li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h3><i class="fas fa-utensils"></i> Favorite Food</h3>
+                <ul class="list-items">
+                    <li>Adobo</li>
+                    <li>Ramen</li>
+                    <li>Pizza</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div class="profile-sections">
-
-        <div class="profile-section">
-            <h3><i class="fas fa-user"></i> Personal Information</h3>
-            <ul class="list-items">
-                <li>Birthday: September 01, 2004</li>
-                <li>Sex: Male</li>
-                <li>Age: 21</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-graduation-cap"></i> Educational Attainment</h3>
-            <ul class="list-items">
-                <li>High School: Saint Francis of Assisi College (2011–2023)</li>
-                <li>College: PUP Taguig (Expected 2027)</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-language"></i> Languages</h3>
-            <ul class="list-items">
-                <li>Filipino</li>
-                <li>English</li>
-                <li>Basic Japanese</li>
-                <li>Basic Ilocano</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-heart"></i> Hobbies</h3>
-            <ul class="list-items">
-                <li>Drinking coffee</li>
-                <li>Playing guitar</li>
-                <li>Watching inspirational series</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-tools"></i> Skills</h3>
-            <ul class="list-items">
-                <li>Making coffee</li>
-                <li>Communication</li>
-                <li>Community service</li>
-                <li>Problem analyzer and solver</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-lightbulb"></i> Facts About Me</h3>
-            <ul class="list-items">
-                <li>I'm a loyal friend</li>
-                <li>I love making coffee</li>
-                <li>I enjoy meeting new people</li>
-            </ul>
-        </div>
-
-        <div class="quote-section">
-            <h3><i class="fas fa-quote-left"></i> Favorite Quote</h3>
-            <div class="quote-text">“Happiness is not about getting all you want, It is about enjoying all you have.”</div>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-star"></i> Dreams</h3>
-            <ul class="list-items">
-                <li>Graduate with honors</li>
-                <li>Build my own startup</li>
-                <li>Have a high salary job</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-plane"></i> Places I Want to Visit</h3>
-            <ul class="list-items">
-                <li>Japan (Cherry Blossoms, Anime Culture)</li>
-                <li>Korea (Jeju Island)</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-thumbs-up"></i> Strengths</h3>
-            <ul class="list-items">
-                <li>Creative</li>
-                <li>Hardworking</li>
-                <li>Empathetic</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-exclamation-circle"></i> Weaknesses</h3>
-            <ul class="list-items">
-                <li>Overthinks</li>
-                <li>Shy in big crowds</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-list-check"></i> Bucket List</h3>
-            <ul class="list-items">
-                <li>Skydive</li>
-                <li>Play guitar in public</li>
-                <li>Visit 3 countries</li>
-            </ul>
-        </div>
-
-        <div class="profile-section">
-            <h3><i class="fas fa-utensils"></i> Favorite Food</h3>
-            <ul class="list-items">
-                <li>Adobo</li>
-                <li>Ramen</li>
-                <li>Pizza</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<footer>
-    © 2025 NOVARE TEAM — All Rights Reserved
-</footer>
-
+    <footer>
+        © 2025 NOVARE TEAM — All Rights Reserved
+    </footer>
 </body>
 </html>
